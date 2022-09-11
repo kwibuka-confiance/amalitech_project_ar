@@ -13,31 +13,33 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green,
-        appBar: AppBar(
-          foregroundColor: Colors.white,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
+        backgroundColor: Colors.black,
+        resizeToAvoidBottomInset: false,
+        // appBar: AppBar(
+        //   foregroundColor: Colors.white,
+        //   backgroundColor: Colors.transparent,
+        //   elevation: 0,
+        // ),
         body: Stack(
           children: [
             Container(
               width: double.infinity,
+              height: double.infinity,
               child: SvgPicture.asset(
-                'assets/images/background-image.svg',
-                fit: BoxFit.fill,
+                'assets/images/bg_image.svg',
+                fit: BoxFit.cover,
                 height: MediaQuery.of(context).size.height,
                 width: double.infinity,
               ),
             ),
             Positioned(
-                top: MediaQuery.of(context).size.height * 0.15,
+                top: MediaQuery.of(context).size.height * 0.29,
                 left: MediaQuery.of(context).size.width * 0.02,
                 right: MediaQuery.of(context).size.width * 0.02,
                 child: Column(
                   children: [
                     Container(
-                      height: 100,
+                      height: 80,
                       child: Image.asset("assets/images/group2.png"),
                     ),
                     const SizedBox(

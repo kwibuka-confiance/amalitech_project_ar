@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Amalitech Project AR',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Poppins',
           // This is the theme of your application.
           //
           // Try running your application with "flutter run". You'll see the
