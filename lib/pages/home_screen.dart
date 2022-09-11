@@ -102,6 +102,7 @@ class _HomescreenState extends State<Homescreen> {
                             width: 0.7),
                         borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
+                      style: TextStyle(color: Colors.white, fontSize: 12),
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           border: OutlineInputBorder(

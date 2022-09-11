@@ -51,7 +51,12 @@ class _SignupScreenState extends State<SignupScreen> {
                           border: Border.all(color: Colors.white, width: 1),
                           borderRadius: BorderRadius.circular(4)),
                       child: const TextField(
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
                         decoration: InputDecoration(
+                          fillColor: Colors.white,
                           contentPadding: EdgeInsets.symmetric(horizontal: 20),
                           border: InputBorder.none,
                           hintStyle: TextStyle(
