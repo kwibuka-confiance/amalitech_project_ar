@@ -190,7 +190,7 @@ class _HomescreenState extends State<Homescreen> {
             child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 color: _bottomNavColor,
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: MediaQuery.of(context).size.height * 0.13,
                 width: MediaQuery.of(context).size.width,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -244,12 +244,17 @@ class _HomescreenState extends State<Homescreen> {
           ),
           Positioned(
               width: MediaQuery.of(context).size.width,
-              bottom: 25,
+              bottom: 31,
               child: Stack(
                 children: [
                   Container(
                       width: MediaQuery.of(context).size.width,
-                      child: SvgPicture.asset("assets/svgs/homeButton.svg"))
+                      child: Container(
+                          height: MediaQuery.of(context).size.width * 0.20,
+                          child: SvgPicture.asset(
+                            "assets/svgs/homeButton.svg",
+                            fit: BoxFit.contain,
+                          )))
                 ],
               )),
         ],

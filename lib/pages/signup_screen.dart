@@ -127,24 +127,29 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              border:
-                                  Border.all(width: 1, color: Colors.white)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 8.0),
-                                child: Image.asset('assets/images/GoogleR.png',
-                                    fit: BoxFit.fill, height: 18, width: 18),
-                              ),
-                              Text("Continue with Google",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 15)),
-                            ],
+                        SingleChildScrollView(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                border:
+                                    Border.all(width: 1, color: Colors.white)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(right: 8.0),
+                                  child: Image.asset(
+                                      'assets/images/GoogleR.png',
+                                      fit: BoxFit.fill,
+                                      height: 18,
+                                      width: 18),
+                                ),
+                                Text("Continue with Google",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 15)),
+                              ],
+                            ),
                           ),
                         )
                       ],
