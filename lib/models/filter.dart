@@ -4,8 +4,8 @@ class Filter {
 }
 
 final List<Filter> filters = [
-  Filter('All'),
-  Filter('Favorite'),
+  Filter('Recent'),
+  Filter('Favorites'),
   Filter('Speed'),
   Filter('Distance'),
   Filter('Duration'),

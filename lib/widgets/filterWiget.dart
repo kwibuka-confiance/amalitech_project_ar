@@ -19,13 +19,13 @@ class FilterWidget extends StatelessWidget {
         changeSelectedFilter(name);
       },
       child: Container(
-        margin: const EdgeInsets.only(right: 5),
-        padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 20),
+        margin: const EdgeInsets.only(right: 12),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
         decoration: BoxDecoration(
           color: selectedFilter.name == name
-              ? Colors.green
+              ? Color(0xFF42B546)
               : const Color.fromARGB(255, 43, 43, 43),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(25),
         ),
         child: Text(name,
             style: const TextStyle(

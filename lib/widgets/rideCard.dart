@@ -39,12 +39,14 @@ class _RideCardWidgetState extends State<RideCardWidget> {
   @override
   Widget build(BuildContext context) {
     reduceWord(address) {
-      return address.length > 40 ? address.substring(0, 40) + '...' : address;
+      return address.length > 30 ? address.substring(0, 30) + '...' : address;
     }
 
     reduceDateDigit(dates) {
       return dates.length > 10 ? dates.substring(0, 10) : dates;
     }
+
+    const Color secondColor = Color.fromARGB(255, 18, 18, 19);
 
     return Stack(
       children: [
@@ -52,7 +54,7 @@ class _RideCardWidgetState extends State<RideCardWidget> {
           padding: const EdgeInsets.all(10),
           margin: const EdgeInsets.only(bottom: 15),
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 31, 31, 31),
+            color: secondColor,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Container(
@@ -63,11 +65,14 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                 children: [
                   Text(
                     reduceWord(widget.address),
-                    style: const TextStyle(color: Colors.white, fontSize: 12),
+                    style: const TextStyle(color: Colors.white, fontSize: 15),
                   ),
                   Text(
                     reduceDateDigit(widget.date.toString()),
-                    style: const TextStyle(color: Colors.white, fontSize: 10),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w100,
+                        fontSize: 13),
                   )
                 ],
               ),
@@ -76,15 +81,15 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
                             "Distance",
-                            style: TextStyle(color: Colors.white, fontSize: 8),
+                            style: TextStyle(color: Colors.white, fontSize: 13),
                           ),
                           RichText(
                               text: TextSpan(children: [
@@ -92,7 +97,7 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                                 text: widget.distance,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 )),
                             const TextSpan(
@@ -105,14 +110,14 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                           ]))
                         ],
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       // DURATION
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
                             "Duration",
-                            style: TextStyle(color: Colors.white, fontSize: 8),
+                            style: TextStyle(color: Colors.white, fontSize: 14),
                           ),
                           RichText(
                               text: TextSpan(children: [
@@ -120,7 +125,7 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                                 text: widget.duration,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 )),
                             const TextSpan(
@@ -133,7 +138,7 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                           ]))
                         ],
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
 
                       // SPEED
                       Column(
@@ -141,7 +146,7 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                         children: [
                           const Text(
                             "Speed",
-                            style: TextStyle(color: Colors.white, fontSize: 8),
+                            style: TextStyle(color: Colors.white, fontSize: 14),
                           ),
                           RichText(
                               text: TextSpan(children: [
@@ -149,7 +154,7 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                                 text: widget.speed,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 12,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 )),
                             const TextSpan(
@@ -164,19 +169,22 @@ class _RideCardWidgetState extends State<RideCardWidget> {
                       )
                     ],
                   ),
-                  Material(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      height: 130,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: ClipRRect(
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Material(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        height: 180,
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
                           borderRadius: BorderRadius.circular(10),
-                          child:
-                              Image.network(widget.image, fit: BoxFit.cover)),
+                        ),
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child:
+                                Image.network(widget.image, fit: BoxFit.cover)),
+                      ),
                     ),
                   )
                 ],
@@ -190,15 +198,15 @@ class _RideCardWidgetState extends State<RideCardWidget> {
           child: GestureDetector(
             onTap: () => widget.favoriteHandler(widget.id),
             child: CircleAvatar(
-              radius: 10,
+              radius: 17,
               backgroundColor: Colors.white,
               child: widget.isFavorite
                   ? const Icon(
                       Icons.favorite,
-                      size: 15,
+                      size: 25,
                       color: Colors.red,
                     )
-                  : const Icon(Icons.favorite_border, size: 15),
+                  : const Icon(Icons.favorite_border, size: 25),
             ),
           ),
         )

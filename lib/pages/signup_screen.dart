@@ -13,163 +13,184 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 18, 18, 18),
         resizeToAvoidBottomInset: false,
-        // appBar: AppBar(
-        //   foregroundColor: Colors.white,
-        //   backgroundColor: Colors.transparent,
-        //   elevation: 0,
-        // ),
-        body: Stack(
+        body: Column(
           children: [
             Container(
               width: double.infinity,
-              height: double.infinity,
               child: SvgPicture.asset(
-                'assets/images/bg_image.svg',
+                'assets/svgs/TopNav.svg',
                 fit: BoxFit.cover,
-                height: MediaQuery.of(context).size.height,
-                width: double.infinity,
+                width: MediaQuery.of(context).size.width,
               ),
             ),
-            Positioned(
-                top: MediaQuery.of(context).size.height * 0.29,
-                left: MediaQuery.of(context).size.width * 0.02,
-                right: MediaQuery.of(context).size.width * 0.02,
-                child: Column(
-                  children: [
-                    Container(
-                      height: 80,
-                      child: Image.asset("assets/images/group2.png"),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          border: Border.all(color: Colors.white, width: 1),
-                          borderRadius: BorderRadius.circular(4)),
-                      child: const TextField(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.02,
                         ),
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                          border: InputBorder.none,
-                          hintStyle: TextStyle(
-                              color: Color.fromARGB(97, 255, 255, 255)),
-                          hintText: 'Email',
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          child: SvgPicture.asset("assets/svgs/logoImage.svg"),
                         ),
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    Container(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .pushReplacementNamed(Homescreen.routeName);
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Text('Continue'),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.05,
                         ),
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                              height: 1,
-                              width: MediaQuery.of(context).size.width * 0.44,
-                              color: Colors.white),
-                          const Text(
-                            'or',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Container(
-                              height: 1,
-                              width: MediaQuery.of(context).size.width * 0.44,
-                              color: Colors.white),
-                        ]),
-                    const SizedBox(height: 25),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(width: 1, color: Colors.white)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.only(right: 8.0),
-                            child: Icon(
-                              Icons.apple,
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              border: Border.all(color: Colors.white, width: 1),
+                              borderRadius: BorderRadius.circular(4)),
+                          child: const TextField(
+                            style: TextStyle(
                               color: Colors.white,
-                              size: 14,
+                              fontSize: 12,
+                            ),
+                            decoration: InputDecoration(
+                              fillColor: Colors.white,
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 20),
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                  color: Color.fromARGB(97, 255, 255, 255)),
+                              hintText: 'Email',
                             ),
                           ),
-                          Text("Continue with Apple",
-                              style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(width: 1, color: Colors.white)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.only(right: 8.0),
-                            child: Icon(
-                              Icons.facebook,
-                              color: Colors.blue,
-                              size: 14,
+                        ),
+                        const SizedBox(height: 25),
+                        Container(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushReplacementNamed(Homescreen.routeName);
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Text('Continue'),
                             ),
+                            style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Color(0xFF42B546))),
                           ),
-                          Text("Continue with Facebook",
-                              style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                    )
-                  ],
-                )),
-            Positioned(
-              width: MediaQuery.of(context).size.width,
-              bottom: 10,
-              child: SingleChildScrollView(
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: const TextSpan(
-                            text:
-                                "By using our app, you confirm that you accept our ",
+                        ),
+                        const SizedBox(height: 25),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              TextSpan(
-                                text: "Terms of use",
-                                style: TextStyle(color: Colors.orange),
+                              Container(
+                                  height: 1,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.40,
+                                  color: Colors.white),
+                              const Text(
+                                'or',
+                                style: TextStyle(color: Colors.white),
                               ),
-                              TextSpan(text: " and "),
-                              TextSpan(
-                                  text: "Privacy Policy.",
-                                  style: TextStyle(color: Colors.orange)),
+                              Container(
+                                  height: 1,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.40,
+                                  color: Colors.white),
                             ]),
-                      )),
-                ),
+                        const SizedBox(height: 25),
+                        Container(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              border:
+                                  Border.all(width: 1, color: Colors.white)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Padding(
+                                padding: EdgeInsets.only(right: 8.0),
+                                child: Icon(
+                                  Icons.apple,
+                                  color: Colors.white,
+                                  size: 22,
+                                ),
+                              ),
+                              Text("Continue with Apple",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w100)),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Container(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              border:
+                                  Border.all(width: 1, color: Colors.white)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(right: 8.0),
+                                child: Image.asset('assets/images/GoogleR.png',
+                                    fit: BoxFit.fill, height: 18, width: 18),
+                              ),
+                              Text("Continue with Google",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15)),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: const TextSpan(
+                                text:
+                                    "By using our app, you confirm that you accept our ",
+                                style: TextStyle(fontWeight: FontWeight.w200),
+                                children: [
+                                  TextSpan(
+                                    text: "Terms of use",
+                                    style: TextStyle(color: Color(0xFFD78B2A)),
+                                  ),
+                                  TextSpan(text: " and "),
+                                  TextSpan(
+                                      text: "Privacy Policy.",
+                                      style:
+                                          TextStyle(color: Color(0xFFD78B2A))),
+                                ]),
+                            strutStyle: StrutStyle(fontSize: 13),
+                          )),
+                    ),
+                  )
+                ],
               ),
-            )
+            ),
           ],
         ));
+  }
+}
+
+extension ColorExtension on String {
+  toColor() {
+    var hexString = this;
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
   }
 }

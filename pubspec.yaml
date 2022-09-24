@@ -45,13 +45,13 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "#000000"
-  image: assets/images/group2.png
+  image: assets/images/splash_image.png
 
 flutter_icons:
   android: true
   ios: true
-  image_path: assets/images/logo.png
-  adaptive_icon_foreground: assets/images/adaptive_bg.png
+  image_path: assets/images/LogoImage.png
+  adaptive_icon_foreground: assets/images/1024.png
   adaptive_icon_background: "#43B346"
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -77,7 +77,14 @@ flutter:
     - assets/images/group2.png
     - assets/images/icon.svg
     - assets/images/profile.jpg
+    - assets/images/splash_image.png
     - assets/images/bg_image.svg
+    - assets/svgs/TopNav.svg
+    - assets/svgs/logoImage.svg
+    - assets/svgs/google.svg
+    - assets/images/GoogleR.png
+    - assets/svgs/bike.svg
+    - assets/svgs/homeButton.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -94,7 +101,8 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
+        # - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Light.ttf
         - asset: assets/fonts/Poppins-Bold.ttf
           style: italic
           weight: 700
